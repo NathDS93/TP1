@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Exo+2" rel="stylesheet">
+  <script src="app.js"></script>
+  <script src="https://use.fontawesome.com/f66664ac40.js"></script>
+  <title>Agence BizOnline</title>
+</head>
+
+<body>
+  <header>
+    <img src="" alt="">
+    <img src="" alt="">
+  </header>
+  <h1>Gestion des stocks</h1>
+  <nav>
+    <ul>
+      <li><a href="">Afficher le stock</a></li>
+      <li><a href="">Ajouter un produit</a></li>
+      <li><a href="">Modifier un produit</a></li>
+      <li><a href="">Supprimer un produit</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="visuel_produit">
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </section>
+  </main>
+  <h2>Afficher le stock</h2>
+  <section class="liste_produit">
+    <div>
+      <ul id="my_list" class="liste1">
+      </ul>
+    </div>
+    <div>
+      <ul>
+      </ul>
+    </div>
+  </section>
+  <section class="ajouter_produit">
+    <h2>Ajouter un produit</h2>
+    <p>Référence : <input  id="ajout_ref_prod" type="text"></p>
+    <p>Nom : <input  id="ajout_nom_prod" type="text" placeholder="Entrer le nom du produit" required></p>
+    <p>Prix : <input  id="ajout_prix_prod" type="text" placeholder="Entrer le prix du produit" required></p>
+    <p>Description : <input id="ajout_description_prod" type="text" placeholder="Entrer description du produit" required></p>
+    <input id="my_btn" type="submit" value="Ajouter" onclick="app.ajouterProduit()">
+  </section>
+
+  <section class="modifier_produit">
+    <h2>Modifier un produit</h2>
+    <p>Référence : <input id="ref_prod" type="text"></p>
+    <!-- logo entrer -->
+    <p>Nom : <input id="nom_prod" class="modif_nom" type="text" required></p>
+    <p>Prix : <input id="prix_prod" class="modif_prix" type="text" required></p>
+    <p>Description : <input id="description_prod" class="modif_description" type="text" required></p>
+    <input id="btn_enregistrer" type="submit" value="Enregistrer">
+  </section>
+
+  <section class="supprimer_produit">
+    <h2>Supprimer un produit</h2>
+    <p>Référence : <input id="ref_prod" type="text" placeholder="Entrer référence du produit"></p>
+    <p>ou</p>
+    <p>Nom : <input id="nom_prod" class="modif_nom" type="text" placeholder="Entrer nom du produit"><input id="btn_rechercher" type="submit" value="Rechercher"></p>
+  <ul></ul>
+  <input type="submit" value="Supprimer">
+  </section>
+
+  <footer>
+    <p>&copy; Agence BizOnline | Laurie - Quentin - Nathalie</p>
+
+  </footer>
+</body>
+
+</html>
