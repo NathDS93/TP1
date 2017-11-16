@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -8,83 +8,122 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Exo+2" rel="stylesheet">
   <script src="app.js"></script>
+  <script src="assets/js/node_modules/smoothscroll/smoothscroll.min.js"></script>
   <script src="https://use.fontawesome.com/f66664ac40.js"></script>
   <title>Agence BizOnline</title>
 </head>
 
-<body>
+<body id="debut">
+
   <header>
-    <img src="" alt="">
-    <img src="" alt="">
+    <div class="container">
+      <figure>
+        <a href="#debut">
+           <img src="" alt="logo" class="position">
+       </a>
+     </figure>
+      <nav>
+        <ul>
+          <li><a href="#afficherP">Afficher le stock</a></li>
+          <li><a href="#ajoutP">Ajouter un produit</a></li>
+          <li><a href="#modifP">Modifier un produit</a></li>
+          <li><a href="#suppP">Supprimer un produit</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <h1>Gestion des stocks</h1>
-  <nav>
-    <ul>
-      <li><a href="">Afficher le stock</a></li>
-      <li><a href="">Ajouter un produit</a></li>
-      <li><a href="">Modifier un produit</a></li>
-      <li><a href="">Supprimer un produit</a></li>
-    </ul>
-  </nav>
-  <main>
+
+  <section class="slide">
+    <figure class="animate">
+      <h1>Gestion des stocks</h1>
+    </figure>
     <section class="visuel_produit">
       <figure>
-        <img src="" alt="">
-        <figcaption></figcaption>
+        <img src="http://www.ikea.com/fr/fr/images/products/kallax-etagere-blanc__0244012_PE383250_S4.JPG" alt="etagere blanche">
+        <figcaption>
+          <small>KALLAX</small>
+        </figcaption>
       </figure>
       <figure>
-        <img src="" alt="">
-        <figcaption></figcaption>
+        <img src="http://www.ikea.com/fr/fr/images/products/malm-commode-tiroirs-blanc__0132190_PE286970_S4.JPG" alt="">
+        <figcaption>
+          <small>MALM</small>
+        </figcaption>
       </figure>
       <figure>
-        <img src="" alt="">
-        <figcaption></figcaption>
+        <img src="http://www.ikea.com/us/en/images/products/linnmon-adils-table__0189133_PE343589_S4.JPG" alt="">
+        <figcaption>
+          <small>LINNMON</small>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="http://www.ikea.com/fr/fr/images/products/alhede-tapis-poils-hauts-blanc__0134116_PE289992_S4.JPG" alt="">
+        <figcaption>
+          <small>ALHEDE</small>
+        </figcaption>
       </figure>
     </section>
-  </main>
-  <h2>Afficher le stock</h2>
+  </section>
+
+  <!--    debut page afficher stocks-->
+  <h2 id="afficherP">Afficher le stock</h2>
   <section class="liste_produit">
     <div>
       <ul id="my_list" class="liste1">
+        <li>Kallax</li>
+        <li>Malm</li>
       </ul>
     </div>
     <div>
-      <ul>
+      <ul class="liste2">
+        <li>Linnmon</li>
+        <li>Alhede</li>
       </ul>
     </div>
   </section>
-  <section class="ajouter_produit">
+
+
+
+  <!--debut ajouter produit-->
+  <section id="ajoutP" class="ajouter_produit">
     <h2>Ajouter un produit</h2>
-    <p>Référence : <input  id="ajout_ref_prod" type="text"></p>
-    <p>Nom : <input  id="ajout_nom_prod" type="text" placeholder="Entrer le nom du produit" required></p>
-    <p>Prix : <input  id="ajout_prix_prod" type="text" placeholder="Entrer le prix du produit" required></p>
+    <form>
+    <p>Référence : <input  id="ajout_ref_prod" type="text" disabled="disabled"></p>
+    <p>Nom : <input id="ajout_nom_prod" type="text" placeholder="Entrer le nom du produit" required></p>
+    <p>Prix : <input id="ajout_prix_prod" type="text" placeholder="Entrer le prix du produit" required></p>
     <p>Description : <input id="ajout_description_prod" type="text" placeholder="Entrer description du produit" required></p>
-    <input id="my_btn" type="submit" value="Ajouter" onclick="app.ajouterProduit()">
+    <input class="submit" id="my_btn" type="submit" value="Ajouter" onclick="app.ajouterProduit()">
+  </form>
   </section>
 
-  <section class="modifier_produit">
+
+
+
+  <!--    debut de la page business-->
+  <section id="modifP" class="modifier_produit">
     <h2>Modifier un produit</h2>
     <p>Référence : <input id="ref_prod" type="text"></p>
     <!-- logo entrer -->
     <p>Nom : <input id="nom_prod" class="modif_nom" type="text" required></p>
     <p>Prix : <input id="prix_prod" class="modif_prix" type="text" required></p>
     <p>Description : <input id="description_prod" class="modif_description" type="text" required></p>
-    <input id="btn_enregistrer" type="submit" value="Enregistrer">
+    <input class="submit" id="btn_enregistrer" type="submit" value="Enregistrer">
   </section>
 
-  <section class="supprimer_produit">
+  <section id="suppP" class="supprimer_produit">
     <h2>Supprimer un produit</h2>
     <p>Référence : <input id="ref_prod" type="text" placeholder="Entrer référence du produit"></p>
     <p>ou</p>
     <p>Nom : <input id="nom_prod" class="modif_nom" type="text" placeholder="Entrer nom du produit"><input id="btn_rechercher" type="submit" value="Rechercher"></p>
-  <ul></ul>
-  <input type="submit" value="Supprimer">
+  <ul id="listesup"></ul>
+  <input class="submit-2" type="submit" value="Supprimer" onclick="app.afficherProduitSup()">
   </section>
 
-  <footer>
-    <p>&copy; Agence BizOnline | Laurie - Quentin - Nathalie</p>
 
-  </footer>
+
+
+
+
 </body>
 
 </html>

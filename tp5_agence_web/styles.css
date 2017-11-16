@@ -1,16 +1,39 @@
-/*body{
-  width: 100%;
-}*/
-
-header{
-height: 200px;
+* {
+    margin: 0;
+    padding: 0;
 
 }
+
+body{
+    overflow: hidden;
+}
+
+
+header{
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 1;
+  background: rgb(235, 154, 44);
+}
+div.container {
+    width: 1200px;
+    max-width: 1200px;
+    min-width: 980px;
+    margin: auto;
+}
+img.position {
+    margin-right: 242px;
+    position: absolute;
+}
+
 
 h1, h2{
 text-align: center;
 font-family: 'Alegreya Sans SC', sans-serif;
-font-weight: 400;
+font-weight: lighter;
+text-transform: uppercase;
+letter-spacing: 2px;
 
 }
 
@@ -20,29 +43,92 @@ h2{
   padding-bottom: 10rem;
 }
 
-nav ul{
-  display:flex;
-  border: 1px solid;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+
+nav {
+    width: 800px;
+    height: 60px;
+    float: left;
 
 }
 
-nav li{
-  padding-left:12%;
-  list-style: none;
+nav ul li {
+    list-style: none;
+    float: left;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 180px;
+}
+
+nav ul li a {
+    color: snow;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+    border-bottom: 3px solid lightgray;
+    transition: 1s
 }
 
 .liste_produit{
 
   display: flex;
   margin: auto;
-    width: 40%;
+  width: 40%;
 }
 
 .liste1{
 
 padding-right: 16rem;
+
+}
+
+.liste1 li, .liste2 li{
+
+  padding: 10px;
+}
+
+p{
+
+  padding:20px;
+
+}
+
+.submit, .submit-2{
+
+  padding: 7px;
+  width: 200px;
+  background-color: transparent;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  border:1px solid black;
+
+}
+
+.submit:hover{
+
+background-color: green;
+color: white;
+
+}
+
+.submit-2:hover{
+
+background-color: red;
+color: white;
+
+}
+
+input{
+
+  padding: 8px;
+  width: 210px;
+  text-align: center;
 }
 
 section, footer{
@@ -62,6 +148,52 @@ a{
 section{
 
   height: 100vh;
+
+
+}
+
+.voirplus{
+
+  text-align:right;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+img{
+
+  float: left;
+  width: 20%;
+  margin-left: 250px;
+  margin-top: 80px;
+
+
+}
+
+figure:hover figcaption{
+
+  opacity:1;
+  transform:translate(0);
+}
+
+
+figcaption{
+  position:absolute;
+  color:black;
+  opacity:0;
+  transition:1s;
+  transform:translateY(5px);
+  font-size: 40px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  letter-spacing: 3px;
+}
+
+
+figure:hover img{
+  transition:1s;
+  opacity:0.6;
+  transform: scale(1.25);
 
 }
 
