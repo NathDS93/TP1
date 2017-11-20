@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Exo+2" rel="stylesheet">
   <script src="app.js"></script>
-  <script src="assets/js/node_modules/smoothscroll/smoothscroll.min.js"></script>
+  <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
   <script src="https://use.fontawesome.com/f66664ac40.js"></script>
   <title>Agence BizOnline</title>
 </head>
@@ -19,111 +19,106 @@
     <div class="container">
       <figure>
         <a href="#debut">
-           <img src="" alt="logo" class="position">
+           <img src="assets/images/logo1.svg" alt="logo" class="position_logo">
        </a>
-     </figure>
-      <nav>
+      </figure>
+      <nav class="nav">
         <ul>
           <li><a href="#afficherP">Afficher le stock</a></li>
           <li><a href="#ajoutP">Ajouter un produit</a></li>
           <li><a href="#modifP">Modifier un produit</a></li>
-          <li><a href="#suppP">Supprimer un produit</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   <section class="slide">
     <figure class="animate">
-      <h1>Gestion des stocks</h1>
+      <a href="#debut">
+            <img src="assets/images/logo1.svg" alt="logo" title="voir le site">
+            </a>
     </figure>
-    <section class="visuel_produit">
-      <figure>
-        <img src="http://www.ikea.com/fr/fr/images/products/kallax-etagere-blanc__0244012_PE383250_S4.JPG" alt="etagere blanche">
-        <figcaption>
-          <small>KALLAX</small>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="http://www.ikea.com/fr/fr/images/products/malm-commode-tiroirs-blanc__0132190_PE286970_S4.JPG" alt="">
-        <figcaption>
-          <small>MALM</small>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="http://www.ikea.com/us/en/images/products/linnmon-adils-table__0189133_PE343589_S4.JPG" alt="">
-        <figcaption>
-          <small>LINNMON</small>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="http://www.ikea.com/fr/fr/images/products/alhede-tapis-poils-hauts-blanc__0134116_PE289992_S4.JPG" alt="">
-        <figcaption>
-          <small>ALHEDE</small>
-        </figcaption>
-      </figure>
-    </section>
   </section>
 
   <!--    debut page afficher stocks-->
   <h2 id="afficherP">Afficher le stock</h2>
-  <section class="liste_produit">
-    <div>
-      <ul id="my_list" class="liste1">
-        <li>Kallax</li>
-        <li>Malm</li>
-      </ul>
-    </div>
-    <div>
-      <ul class="liste2">
-        <li>Linnmon</li>
-        <li>Alhede</li>
-      </ul>
-    </div>
+  <section class="liste_produit" id="liste_produit">
+    <table id="tableau" border="1">
+      <thead>
+        <tr>
+          <th>Référence</th>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th>Description</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="ref-1">
+          <td class="td-1"=>1</td>
+          <td class="td-2">KALLAX</td>
+          <td class="td-3">60</td>
+          <td class="td-4">Étagère murale blanche, 4 rangements</td>
+          <td><button class="trash" onclick="app.supprimerProduit(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+
+        </tr>
+        <tr id="ref-2">
+          <td class="td-1">2</td>
+          <td class="td-2">MALM</td>
+          <td class="td-3">90</td>
+          <td class="td-4">Commode blanche, 3 tiroirs</td>
+          <td><button class="trash" onclick="app.supprimerProduit(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+
+        </tr>
+        <tr id="ref-3">
+          <td class="td-1">3</td>
+          <td class="td-2">ALHEDE</td>
+          <td class="td-3">25</td>
+          <td class="td-4">Tapis couleur gris clair</td>
+          <td><button class="trash" onclick="app.supprimerProduit(this)"><i class="fa fa-trash-o" aria-hidden="true"</i></button></td>
+        </tr>
+        <tr id="ref-4">
+          <td class="td-1">4</td>
+          <td class="td-2">LINNMON</td>
+          <td class="td-3">15</td>
+          <td class="td-4">Table blanche légère</td>
+          <td><button class="trash" onclick="app.supprimerProduit(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
   </section>
-
-
 
   <!--debut ajouter produit-->
   <section id="ajoutP" class="ajouter_produit">
     <h2>Ajouter un produit</h2>
     <form>
-    <p>Référence : <input  id="ajout_ref_prod" type="text" disabled="disabled"></p>
-    <p>Nom : <input id="ajout_nom_prod" type="text" placeholder="Entrer le nom du produit" required></p>
-    <p>Prix : <input id="ajout_prix_prod" type="text" placeholder="Entrer le prix du produit" required></p>
-    <p>Description : <input id="ajout_description_prod" type="text" placeholder="Entrer description du produit" required></p>
-    <input class="submit" id="my_btn" type="submit" value="Ajouter" onclick="app.ajouterProduit()">
-  </form>
+      <p>Référence : <input id="ajout_ref_prod" type="text" disabled="disabled"></p>
+      <p>Nom : <input id="ajout_nom_prod" type="text" placeholder="Entrez le nom du produit" required onFocus="if (this.placeholder=='Entrer le nom du produit') {this.placeholder=''}"></p>
+      <p>Prix : <input id="ajout_prix_prod" type="number" placeholder="Entrez le prix du produit" required onFocus="if (this.placeholder=='Entrer le prix du produit') {this.placeholder=''}"></p>
+      <p>Description : <input id="ajout_description_prod" type="text" placeholder="Entrez description du produit" required onFocus="if (this.placeholder=='Entrer description du produit') {this.placeholder=''}"></p>
+      <input class="submit" id="my_btn" type="submit" value="Ajouter" onclick="app.ajouterProduit()">
+    </form>
   </section>
 
 
-
-
-  <!--    debut de la page business-->
   <section id="modifP" class="modifier_produit">
     <h2>Modifier un produit</h2>
-    <p>Référence : <input id="ref_prod" type="text"></p>
-    <!-- logo entrer -->
-    <p>Nom : <input id="nom_prod" class="modif_nom" type="text" required></p>
-    <p>Prix : <input id="prix_prod" class="modif_prix" type="text" required></p>
-    <p>Description : <input id="description_prod" class="modif_description" type="text" required></p>
-    <input class="submit" id="btn_enregistrer" type="submit" value="Enregistrer">
+    <form>
+      <input id="ref_prod" type="text" placeholder="Entrez la référence du produit" required><br/><br/>
+      <hr>
+      <p>Nom : <input id="nom_prod" class="modif_nom" type="text"></p>
+      <p>Prix : <input id="prix_prod" class="modif_prix" type="number"></p>
+      <p>Description : <input id="description_prod" class="modif_description" type="text"></p>
+      <input class="submit" id="btn_enregistrer" type="submit" value="Enregistrer" onclick="app.modifierProduit()">
+    </form>
   </section>
 
-  <section id="suppP" class="supprimer_produit">
-    <h2>Supprimer un produit</h2>
-    <p>Référence : <input id="ref_prod" type="text" placeholder="Entrer référence du produit"></p>
-    <p>ou</p>
-    <p>Nom : <input id="nom_prod" class="modif_nom" type="text" placeholder="Entrer nom du produit"><input id="btn_rechercher" type="submit" value="Rechercher"></p>
-  <ul id="listesup"></ul>
-  <input class="submit-2" type="submit" value="Supprimer" onclick="app.afficherProduitSup()">
-  </section>
+  <footer>
+    <p>&copy; Agence BizOnline | Laurie - Quentin - Nathalie</p>
 
-
-
-
-
-
+  </footer>
 </body>
 
 </html>

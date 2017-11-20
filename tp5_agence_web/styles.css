@@ -1,204 +1,186 @@
 * {
-    margin: 0;
-    padding: 0;
-
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
 
-
-header{
+header {
   width: 100vw;
   height: 60px;
   position: fixed;
-  z-index: 1;
   background: rgb(235, 154, 44);
 }
+
 div.container {
-    width: 1200px;
-    max-width: 1200px;
-    min-width: 980px;
+  width: 1200px;
+  max-width: 1200px;
+  min-width: 980px;
+  margin: auto;
+}
+
+.position_logo {
+  width: 10%;
+  font-family: 'Tw Cen MT Condensed Extra Bold';
+  top: 14px;
+  left: 0px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  position: fixed;
+}
+figure.animate {
+    padding-top: 170px;
     margin: auto;
-}
-img.position {
-    margin-right: 242px;
-    position: absolute;
+    width: 400px;
+    height: 500px;
 }
 
-
-h1, h2{
-text-align: center;
-font-family: 'Alegreya Sans SC', sans-serif;
-font-weight: lighter;
-text-transform: uppercase;
-letter-spacing: 2px;
-
-}
-
-h2{
-
+h2 {
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-size: 30px;
-  padding-bottom: 10rem;
+  padding-bottom: 7rem;
+  padding-top: 80px;
 }
-
-
 
 nav {
-    width: 800px;
-    height: 60px;
-    float: left;
-
+  width: 100%;
+  height: 50px;
+  float: left;
+  background-color: rgb(235, 154, 44);
+  opacity: 0.8;
+  position: fixed;
 }
 
 nav ul li {
-    list-style: none;
-    float: left;
-    display: block;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    width: 180px;
+  list-style: none;
+  float: left;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  padding-left: 12rem;
 }
 
 nav ul li a {
-    color: snow;
-    text-decoration: none;
-    font-size: 18px;
+  color: snow;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: lightgray;
-    border-bottom: 3px solid lightgray;
-    transition: 1s
+  color: rgb(66, 57, 45);
+  border-bottom: 2px solid rgb(66, 57, 45);
+  transition: 1s
 }
 
-.liste_produit{
-
-  display: flex;
+table {
+  width: 90vw;
+  border: 1px solid black;
   margin: auto;
-  width: 40%;
 }
 
-.liste1{
-
-padding-right: 16rem;
-
+th, td {
+  padding: 15px;
 }
 
-.liste1 li, .liste2 li{
-
-  padding: 10px;
+p {
+  padding: 20px;
 }
 
-p{
-
-  padding:20px;
-
-}
-
-.submit, .submit-2{
-
+.submit, .submit-2 {
   padding: 7px;
   width: 200px;
   background-color: transparent;
   font-family: 'Alegreya Sans SC', sans-serif;
   text-transform: uppercase;
   font-size: 16px;
-  border:1px solid black;
-
+  border: 1px solid black;
+  margin-left: 10%
 }
 
-.submit:hover{
-
-background-color: green;
-color: white;
-
+.submit:hover {
+  background-color: rgb(66, 57, 45);
+  color: white;
 }
 
-.submit-2:hover{
-
-background-color: red;
-color: white;
-
+.submit-2:hover {
+  background-color: red;
+  color: white;
 }
 
-input{
-
+input {
   padding: 8px;
   width: 210px;
   text-align: center;
 }
 
-section, footer{
+section, footer {
   text-align: center;
 }
 
-p, a{
+p, a {
   font-family: 'Exo 2', sans-serif;
   font-weight: lighter;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-section{
-
+section {
   height: 100vh;
-
-
 }
 
-.voirplus{
-
-  text-align:right;
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+form {
+  margin-left: 38%;
+  text-align: left;
 }
 
-img{
-
-  float: left;
-  width: 20%;
-  margin-left: 250px;
-  margin-top: 80px;
-
-
+#ajout_ref_prod {
+  margin-left: 50px;
 }
 
-figure:hover figcaption{
-
-  opacity:1;
-  transform:translate(0);
+#ajout_nom_prod {
+  margin-left: 87px;
 }
 
-
-figcaption{
-  position:absolute;
-  color:black;
-  opacity:0;
-  transition:1s;
-  transform:translateY(5px);
-  font-size: 40px;
-  font-family: 'Alegreya Sans SC', sans-serif;
-  letter-spacing: 3px;
+#ajout_prix_prod {
+  margin-left: 95px;
 }
 
-
-figure:hover img{
-  transition:1s;
-  opacity:0.6;
-  transform: scale(1.25);
-
+#ajout_description_prod {
+  margin-left: 42px;
 }
 
-footer{
+#ref_prod {
+  margin-left: 95px;
+}
 
-  border-top: 1px solid;
+#nom_prod {
+  margin-left: 60px;
+}
+
+#prix_prod {
+  margin-left: 65px;
+}
+
+#description_prod {
+  margin-left: 10px;
+}
+
+hr {
+  width: 400px;
+}
+
+footer {
   height: 50px;
+  background-color: rgb(235, 154, 44);
+  color: white;
 }

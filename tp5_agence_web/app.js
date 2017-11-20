@@ -1,81 +1,81 @@
-var app = (function init(){
+var app = (function init() {
 
+  var nbrProd = 4;
+  var actuelRef = 4;
   var items;
 
   function scroller() {
-      console.log(this);
-      var cible, elementCible;
-      cible = this.getAttribute("data-target");
-      elementCible = document.getElementById(cible);
-      window.smoothScroll(elementCible, 500);
+    console.log(this);
+    var cible, elementCible;
+    cible = this.getAttribute("data-target");
+    elementCible = document.getElementById(cible);
+    window.smoothScroll(elementCible, 500);
   }
 
   function ecouterClicks() {
-      var i;
-      for (i = 0; i < items.length; i += 1) {
-          items[i].onclick = scroller;
-      }
+    var i;
+    for (i = 0; i < items.length; i += 1) {
+      items[i].onclick = scroller;
+    }
   }
 
-
-var tab = [];
-var Produit = function Produit(nom, prix, description) {
-  this.nom = nom;
-  this.prix = prix;
-  this.description = description;
-};
-
-
-var ajouterProduit = function() {
-
-  var txt = document.getElementById("ajout_nom_prod").value;
-  var txt2 = document.getElementById("ajout_prix_prod").value;
-  var txt3 = document.getElementById("ajout_description_prod").value;
-  if (txt === "") {
-    return false;
-  } else {
-  document.getElementById("my_list").innerHTML += "<li>" + txt + "</li>";
-}
-  tab.push(txt, txt2, txt3);
-};
-
-function randomNumber() {
-  var min = 1;
-  var max = 9999999999;
-  var num = Math.floor(Math.random() * (max - min + 1)) + min;
-  var timeNow = new Date().getTime();
-  document.getElementById('ajout_ref_prod').value = num + timeNow;
-}
-
-
-
-window.onload = function init(){
-  items = document.querySelectorAll("#nav .item");
-  console.log(items);
-  ecouterClicks();
-randomNumber();
-};
-
-  return {
-    ajouterProduit: ajouterProduit
+  var Produit = function Produit(nom, prix, description) {
+    this.nom = nom;
+    this.prix = prix;
+    this.description = description;
   };
 
+  var modifierProduit = function() {
+    var txt = new Array();
+    txt[0] = document.getElementById("ref_prod").value;
+    txt[2] = document.getElementById("nom_prod").value;
+    txt[3] = document.getElementById("prix_prod").value;
+    txt[4] = document.getElementById("description_prod").value;
 
+    for (var y = 2; y <= 4; y++) {
+      console.log(txt[y]);
+      if (txt[y] != "")
+        document.getElementById("ref-" + txt[0]).querySelector(".td-" + y).textContent = txt[y];
+    }
+  };
 
+  var ajouterProduit = function() {
+    var txt = new Array();
+    txt[0] = document.getElementById("ajout_ref_prod").value;
+    txt[1] = document.getElementById("ajout_nom_prod").value;
+    txt[2] = document.getElementById("ajout_prix_prod").value;
+    txt[3] = document.getElementById("ajout_description_prod").value;
 
+    for (var i = 0; i <= 3; i++) {
+      if (txt[i] === "") {
+        console.log("c'est pas bon");
+        return false;
+      }
+    }
+    document.getElementById("tableau").innerHTML += "<tr id=\"ref-" + actuelRef + "\"><td class=\"td-1\">" + txt[0] + "<td class=\"td-2\">" + txt[1] + "<td class=\"td-3\">" + txt[2] + "<td class=\"td-4\">" + txt[3] + "<td><button class=\"trash\" onclick=\"app.supprimerProduit(this)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></td></tr>";
+    randomNumber();
+  };
 
-  //
-  // function afficherProduitSup(){
-  //
-  //   document.getElementById("listesup").innerHTML +="<li>" + txt + "</li>";
-  //
-  // }
+  var supprimerProduit = function(monThis) {
+    nbrProd--;
+    monThis.parentNode.parentNode.remove();
+  };
 
+  function randomNumber() {
+    actuelRef++;
+    document.getElementById('ajout_ref_prod').value = actuelRef;
+  }
 
-  // etagere = new Produit ("Kallax", 35, "lkjkj");
-  // tapis = new Produit("Adum", 50, "JGjhguh");
-  // commode = new Produit("Malm" 125, "jkhkjhg");
-  // table = new Produit("Linnmon", 29.50, "hfgfhgf");
+  window.onload = function init() {
+    items = document.querySelectorAll("#nav .item");
+    console.log(items);
+    ecouterClicks();
+    randomNumber();
+  };
 
-
+  return {
+    ajouterProduit: ajouterProduit,
+    supprimerProduit: supprimerProduit,
+    modifierProduit: modifierProduit
+  };
 }());
